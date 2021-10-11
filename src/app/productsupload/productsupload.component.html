@@ -1,0 +1,13 @@
+<p>productsupload works!</p>
+<div>
+<form #products="ngForm"  [formGroup]="myform"   (ngSubmit)="addproduct(products)"  >
+Enter product id<input type="text" name="id" ngModel formControlName="id" ><br>
+Enter product name<input type="text" name="name" ngModel formControlName="name"><br>
+Enter product description<input type="text" name="desc" ngModel formControlName="desc"><br>
+upload image<input type="file" name="image" (change)="onFileSelect($event)"  ngModel formControlName="image" ><br>
+Enter cost<input type="number" name="cost" ngModel formControlName="cost" ><br>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+

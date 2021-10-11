@@ -1,0 +1,62 @@
+<p>displayproducts works!</p>
+<!--<h2>{{noofitems}}</h2>-->
+<button class="btn btn-info" (click)="book()"><h2>{{noofitems}}</h2><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg> </button>
+<form #pr="ngForm" (ngSubmit)="disp(pr)">
+<div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+      name= "name" aria-describedby="search-addon"  ngModel/>
+    <button type="submit" class="btn btn-outline-primary">search</button>
+  </div>
+</form>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">bag id</th>
+        <th scope="col">name</th>
+        <th scope="col">image</th>
+        <th scope="col">desc</th>
+        <th scope="col">cost</th>
+        <th scope="col">Add to cart</th>
+        <th scope="col">delete from cart</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let de of details">
+       <!--<th scope="row" ></th>-->
+        <td>{{de.id}}</td>
+        <td >{{de.name}}</td>
+        <div class="zoom">
+           
+        <td ><img  id="view" src={{de.image}} alt="hii" height="200" width="200"  ></td>
+              
+    </div>
+        <td>{{de.desc}}</td>
+        <td >{{de.cost}}</td>
+        <td><div class="container">
+      
+      
+      
+            <button  type="submit" (click)="sum(de.cost,de.id,de.name)"> <a class="btn btn-info btn-lg">
+               <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+             </a></button>
+           
+         </div></td>
+         <td><div class="container">
+      
+      
+      
+            <button  type="submit" (click)="sub(de.cost,de.id,de.name)"> <a class="btn btn-info btn-lg">
+               <span class="glyphicon glyphicon-shopping-cart"></span> delete
+             </a></button>
+           
+         </div></td>
+ 
+      </tr>
+    </tbody>
+  </table>
+  <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="book()">proceed booking</button>
+  

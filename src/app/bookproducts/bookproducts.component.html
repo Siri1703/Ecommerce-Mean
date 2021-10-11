@@ -1,0 +1,24 @@
+<p>bookproducts works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of productdetails">
+       
+        <td>{{d.prodid}}</td>
+        <td>{{d.name}}</td>
+        <td>{{d.cost}}</td>
+        
+      </tr>
+    
+    </tbody>
+  </table>
+  
+  <button  type="submit" class="btn btn-primary" (click)="pay()">pay</button>
+  <button type="Submit" class="btn btn-primary" (click)="cod()">book on COD</button>
+

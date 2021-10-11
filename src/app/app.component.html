@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-primary">
+  <a class="navbar-brand" href="#">
+    
+    <h3>E commerce Website </h3>
+    
+  </a>
+ 
+</nav>
+
+<div class="sidebar">
+  <a routerLink="/homecomponent" routerLinkActive="active" >Home</a>
+  <a routerLink="/registerComponent" routerLinkActive="active">Register</a>
+      <a routerLink="/logincomponent" routerLinkActive="active">Login</a>
+      <a routerLink="/productsupload" routerLinkActive="active">Addproducts</a>
+      <a routerLink="/display" routerLinkActive="active">searchproducts</a>
+        <button type="submit" (click)="signout()">Logout</button>
+        <!--<button type="submit" (click)="signin()">Google</button>-->
+</div>
+
+<div class="content">
+  
+  <router-outlet></router-outlet>
+</div>
