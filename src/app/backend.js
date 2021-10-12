@@ -112,6 +112,7 @@ app.use("/login",async(req,res)=>{
     console.log(users.password);
     console.log(password);
     console.log(userexists);
+    try{
     const valid=await bcrypt.compareSync(users.password,userexists.password);
     if(valid)
     {
@@ -122,6 +123,12 @@ app.use("/login",async(req,res)=>{
     else{
         res.send({"message":"not valid credentials"});
     }
+}
+catch{
+    res.send({"message":"email does not exists"})
+}
+
+
 })
 
 

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     console.log(user.value);
 this.ecom.verify(user.value).subscribe(data=>{
   console.log(data.message);
-  if(data.message=="not valid credentials")
+  if(data.message=="not valid credentials" || data.message=="email does not exists")
   {
     alert("Not Existing user please register to continue");
     this.router.navigateByUrl("/registerComponent")

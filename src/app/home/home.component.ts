@@ -13,6 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 redirect(){
-this.router.navigateByUrl("/logincomponent")
+this.router.navigateByUrl("/display")
 }
 }
